@@ -1,8 +1,14 @@
-# DocuMind — AI Document Intelligence System
+# DocuMind — AI Document Intelligence Platform
 
-DocuMind is a full-stack multi-document RAG System that allows users to upload PDFs, Word documents, Excel sheets, and CSV files, organize them into folders, and ask natural-language questions with grounded answers and verified source citations.
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/TypeScript-Frontend-blue?logo=typescript)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)
+![RAG](https://img.shields.io/badge/RAG-Multi--Document-purple)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-green)
 
-Built as a production-oriented AI application for document-heavy businesses such as accounting offices, legal teams, real estate agencies, and internal operations teams.
+DocuMind is a full-stack multi-document RAG platform that allows users to upload PDFs, Word documents, Excel sheets, and CSV files, organize them into folders, and ask natural-language questions with grounded answers and verified source citations.
+
+Built as a business-focused AI document intelligence product for document-heavy workflows such as reports, contracts, spreadsheets, internal files, and knowledge bases.
 
 ---
 
@@ -30,63 +36,26 @@ Users can ask questions inside a selected folder and view the documents inside t
 
 ## Why DocuMind?
 
-Business teams often store critical information across multiple files: contracts, reports, spreadsheets, proposals, policies, and internal documents.
+Business teams often store important knowledge across scattered files. Searching manually is slow, repetitive, and error-prone, especially when users need answers across multiple documents.
 
-Searching these files manually is slow, repetitive, and error-prone, especially when users need answers across several documents at once.
-
-DocuMind solves this by turning uploaded files into a searchable knowledge base and allowing users to ask questions in natural language while preserving trust through source citations.
+DocuMind turns uploaded files into a searchable knowledge base and lets users ask questions in natural language while keeping answers trustworthy through source citations.
 
 ---
 
 ## Key Features
 
 - Upload and index PDF, DOCX, XLSX, XLSM, and CSV files
-- Parse uploaded documents and extract searchable text
-- Split documents into retrievable chunks
-- Generate embeddings for semantic search
-- Retrieve relevant chunks across all documents
-- Ask questions inside a selected document
-- Ask questions inside a selected folder
-- Rerank retrieved results before answer generation
-- Generate grounded LLM answers with source citations
-- Organize documents into folders
-- Move documents between folders directly from the document library
-- Open folders from the sidebar and view their documents
-- Continue previous conversations using conversation history
+- Parse, chunk, embed, retrieve, rerank, and generate grounded answers
+- Ask questions across all documents, a selected document, or a selected folder
+- Organize documents into folders and move files between folders
 - View verified sources used to generate each answer
-- Use a polished SaaS-style dashboard built for business users
+- Continue previous conversations with conversation history
+- Clean SaaS-style dashboard built for business users
+- Markdown table rendering for structured answers
 
 ---
 
-## Demo Use Cases
-
-DocuMind is designed for document-heavy workflows where users need reliable answers from private files.
-
-Example use cases:
-
-- Summarize internal business documents
-- Compare reports, contracts, or lecture files
-- Find risks, obligations, and key clauses
-- Ask questions across all uploaded documents
-- Ask questions inside a selected document
-- Ask questions inside a selected folder
-- Search internal knowledge bases using natural language
-- Extract important information from reports and spreadsheets
-
-Example questions:
-
-```text
-Summarize this document.
-Compare agile and plan-driven models.
-What are the key risks mentioned in this report?
-Find the obligations in this contract.
-Where are the requirements misunderstood?
-What are the most important sections in this file?
-```
-
----
-
-## System Workflow
+## Architecture
 
 ```text
 Upload Document
@@ -108,9 +77,7 @@ Generate Grounded Answer
 Show Verified Sources
 ```
 
----
-
-## Architecture
+Simplified system flow:
 
 ```text
 Frontend: Next.js + TypeScript + Tailwind CSS
@@ -130,41 +97,9 @@ Answer with citations and source references
 
 ## Tech Stack
 
-### Frontend
-
-- Next.js
-- TypeScript
-- React
-- Tailwind CSS
-- SaaS-style dashboard UI
-- Component-based frontend architecture
-
-### Backend
-
-- Python
-- FastAPI
-- Document parsing
-- Chunking pipeline
-- Embedding generation
-- Hybrid retrieval
-- Reranking
-- LLM answer generation
-
-### AI / RAG
-
-- Retrieval-Augmented Generation
-- Embeddings
-- Multi-document search
-- Folder-scoped retrieval
-- Selected-document retrieval
-- Source-grounded responses
-- Citation-based answer validation
-
-### Storage / Infrastructure
-
-- PostgreSQL / Supabase
-- REST APIs
-- Environment-based configuration
+**Frontend:** Next.js, TypeScript, React, Tailwind CSS  
+**Backend:** Python, FastAPI, PostgreSQL / Supabase  
+**AI / RAG:** Embeddings, Hybrid Search, Reranking, LLM Answer Generation, Source Citations
 
 ---
 
@@ -174,10 +109,6 @@ Answer with citations and source references
 DocuMind/
 ├── backend/
 │   ├── app/
-│   │   ├── api/
-│   │   ├── core/
-│   │   ├── db/
-│   │   └── services/
 │   ├── requirements.txt
 │   └── .env.example
 │
@@ -191,7 +122,7 @@ DocuMind/
 │
 ├── docs/
 │   └── screenshots/
-│       ├── dashboard.png
+│       ├── homepage.png
 │       ├── chat-with-citations.png
 │       └── folder-retrieval-mode.png
 │
@@ -204,16 +135,7 @@ DocuMind/
 
 ## Running Locally
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/mohamed-samie/documind-ai-document-intelligence.git
-cd documind-ai-document-intelligence
-```
-
----
-
-### 2. Backend setup
+### Backend
 
 ```bash
 cd backend
@@ -236,9 +158,7 @@ FastAPI docs:
 http://127.0.0.1:8000/docs
 ```
 
----
-
-### 3. Frontend setup
+### Frontend
 
 Open another terminal:
 
@@ -258,7 +178,7 @@ http://localhost:3000
 
 ## Environment Variables
 
-Create a real `.env` file locally using the example file:
+Create a local `.env` file from the example:
 
 ```bash
 cp backend/.env.example backend/.env
@@ -275,77 +195,22 @@ GROQ_MODEL=llama-3.3-70b-versatile
 
 Never commit real API keys or database credentials.
 
-The real values should stay only in:
+Real values should stay only in:
 
 ```text
 backend/.env
 ```
 
-The `.env.example` file should contain placeholders only.
-
 ---
 
-## Main Product Screens
+## Engineering Highlights
 
-### Dashboard
-
-The dashboard gives users a clear overview of their workspace, upload area, document folders, verified sources, and recent conversations.
-
-### Upload Documents
-
-Users can upload PDFs, Word documents, Excel sheets, and CSV files. Uploaded documents are parsed, chunked, embedded, and indexed for retrieval.
-
-### Ask Your Documents
-
-Users can ask questions across:
-
-- All documents
-- A selected document
-- A selected folder
-
-### Verified Sources
-
-The source panel shows the exact documents, pages, and sections used to generate the answer.
-
-### Document Library
-
-Users can view uploaded documents, move files between folders, ask a selected document, and delete files.
-
-### Folder Sidebar
-
-Users can create folders, rename folders, delete folders, open a folder, and view the documents inside it.
-
----
-
-## What Makes This Project Strong
-
-DocuMind is not just a basic chatbot. It demonstrates a complete AI product workflow:
-
-- Real document ingestion
-- Multi-format file parsing
-- Chunking strategy
-- Embedding-based retrieval
-- Hybrid search
-- Reranking
-- LLM response generation
-- Source citations
-- Conversation history
-- Folder-based knowledge organization
-- Business-focused UI/UX
-
-This makes it suitable as a portfolio project for AI Engineer, LLM Apps, RAG Systems, and Full-Stack AI roles.
-
----
-
-## What I Learned
-
-- How to build a full-stack RAG system from document upload to answer generation
-- How to design retrieval flows for all-documents, selected-document, and selected-folder modes
-- How to structure a FastAPI backend for AI document workflows
-- How to build a polished SaaS-style frontend using Next.js and TypeScript
-- How to improve trust in LLM answers using source citations
-- How to design document organization features for business users
-- How to handle conversation state, sources, and user workflows in a real product interface
+- Built a complete RAG pipeline from file upload to grounded answer generation
+- Designed retrieval modes for all documents, selected documents, and selected folders
+- Added source citations to improve trust and reduce hallucination risk
+- Built folder-based document organization for business workflows
+- Separated frontend and backend concerns for maintainability and scalability
+- Designed a SaaS-style UI suitable for document-heavy business use cases
 
 ---
 
@@ -354,35 +219,17 @@ This makes it suitable as a portfolio project for AI Engineer, LLM Apps, RAG Sys
 - OCR support for scanned PDFs
 - Streaming LLM responses
 - Source highlighting inside document previews
-- Advanced document preview drawer
 - Authentication and team workspaces
-- Role-based access control
-- Dockerized deployment
-- CI/CD pipeline
-- Usage analytics dashboard
+- Dockerized deployment and CI/CD
 - Export answers to PDF or DOCX
-- Workspace sharing for teams
-
----
-
-## Repository Best Practices Applied
-
-- Clean project structure
-- Separate frontend and backend folders
-- Environment variables stored outside Git
-- `.env.example` used for safe configuration sharing
-- Professional README documentation
-- Feature-focused commit messages
-- Branch-based documentation workflow
 
 ---
 
 ## Author
 
-**Mohamed Abdel-Samie**
-
+**Mohamed Abdel-Samie**  
 CS & AI Student @ Assiut University  
-AI Engineer Intern @ e& Egypt
+AI Engineer Intern @ e& Egypt  
 
 Focused on building production-oriented AI applications, LLM-powered tools, RAG workflows, and practical ML systems.
 
@@ -390,4 +237,5 @@ Focused on building production-oriented AI applications, LLM-powered tools, RAG 
 
 ## License
 
-This project is currently intended for portfolio and educational purposes.
+This project is intended for portfolio and educational purposes.  
+For commercial use, please contact the author.
