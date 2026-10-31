@@ -88,7 +88,7 @@ def run_retrieval(user_id: str, question: str, top_k: int, document_id: Optional
     trace['timings']['query_analysis_ms'] = round((time.perf_counter() - t0) * 1000, 1)
 
     t0 = time.perf_counter()
-    routed_doc_id = route_to_document(user_id, analysis_obj.entities, document_id, folder_id)
+    routed_doc_id = route_to_document(user_id, analysis_obj.entities, document_id, folder_id, question=question)
     trace['routed_document_id'] = str(routed_doc_id) if routed_doc_id else None
     trace['timings']['routing_ms'] = round((time.perf_counter() - t0) * 1000, 1)
 

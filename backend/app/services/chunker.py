@@ -196,4 +196,4 @@ def chunk_text(
         all_chunks.extend(new_chunks)
         chunk_index_counter += len(new_chunks)
 
-    return all_chunksls
+    return all_chunks

@@ -212,6 +212,20 @@ backend/.env
 
 ---
 
+## Retrieval Evaluation
+
+Measured on [FinanceBench](https://github.com/patronus-ai/financebench): 150 analyst questions over 84 SEC filings (42K chunks).
+
+| Setting | Hit@8 | MRR@8 | Median retrieval |
+|---|---|---|---|
+| Selected document, full pipeline | 53.3% | 0.298 | 93 ms |
+| Whole library, original router | 24.0% | 0.105 | 2.5 s |
+| Whole library, company + fiscal-year router | 41.3% | 0.195 | 0.14 s |
+
+Method, findings and how to reproduce: [backend/eval/README.md](backend/eval/README.md).
+
+---
+
 ## Engineering Highlights
 
 - Designed and implemented an end-to-end RAG pipeline from document upload to grounded answer generation

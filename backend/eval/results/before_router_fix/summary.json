@@ -1,0 +1,77 @@
+{
+ "n_questions": 150,
+ "n_documents": 84,
+ "summary": {
+  "semantic/all": {
+   "hit@5": 0.2,
+   "mrr@5": 0.1217,
+   "hit@8": 0.2267,
+   "mrr@8": 0.1252,
+   "median_retrieval_ms": 147.0
+  },
+  "hybrid/all": {
+   "hit@5": 0.1533,
+   "mrr@5": 0.0837,
+   "hit@8": 0.1933,
+   "mrr@8": 0.089,
+   "median_retrieval_ms": 2494.2
+  },
+  "full/all": {
+   "hit@5": 0.16,
+   "mrr@5": 0.0937,
+   "hit@8": 0.24,
+   "mrr@8": 0.1053,
+   "median_retrieval_ms": 2463.0
+  },
+  "semantic/doc": {
+   "hit@5": 0.4333,
+   "mrr@5": 0.2783,
+   "hit@8": 0.5,
+   "mrr@8": 0.2884,
+   "median_retrieval_ms": 8.6
+  },
+  "hybrid/doc": {
+   "hit@5": 0.4133,
+   "mrr@5": 0.2631,
+   "hit@8": 0.48,
+   "mrr@8": 0.2728,
+   "median_retrieval_ms": 84.2
+  },
+  "full/doc": {
+   "hit@5": 0.4333,
+   "mrr@5": 0.283,
+   "hit@8": 0.5333,
+   "mrr@8": 0.298,
+   "median_retrieval_ms": 92.6
+  }
+ },
+ "hit@8_by_question_type": {
+  "domain-relevant": {
+   "semantic/all": 0.14,
+   "hybrid/all": 0.1,
+   "full/all": 0.08,
+   "semantic/doc": 0.42,
+   "hybrid/doc": 0.38,
+   "full/doc": 0.46,
+   "n": 50
+  },
+  "metrics-generated": {
+   "semantic/all": 0.2,
+   "hybrid/all": 0.2,
+   "full/all": 0.3,
+   "semantic/doc": 0.44,
+   "hybrid/doc": 0.44,
+   "full/doc": 0.48,
+   "n": 50
+  },
+  "novel-generated": {
+   "semantic/all": 0.34,
+   "hybrid/all": 0.28,
+   "full/all": 0.34,
+   "semantic/doc": 0.64,
+   "hybrid/doc": 0.62,
+   "full/doc": 0.66,
+   "n": 50
+  }
+ }
+}
