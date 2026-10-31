@@ -14,6 +14,12 @@ Built as a business-focused AI product for document-heavy workflows such as repo
 
 ---
 
+## Demo Video
+
+[Watch the demo](https://youtu.be/JRAVSt95meM)
+
+---
+
 ## Preview
 
 ### Home Page
@@ -118,6 +124,7 @@ Grounded answer with document, page, and section references
 DocuMind/
 ├── backend/
 │   ├── app/
+│   ├── eval/              # FinanceBench retrieval evaluation
 │   ├── requirements.txt
 │   └── .env.example
 │
@@ -135,7 +142,6 @@ DocuMind/
 │       ├── chat-with-citations.png
 │       └── folder-retrieval-mode.png
 │
-├── docker-compose.yml
 ├── README.md
 └── .gitignore
 ```
@@ -253,7 +259,7 @@ Method, findings and how to reproduce: [backend/eval/README.md](backend/eval/REA
 ## Author
 
 **Mohamed Abdel-Samie**  
-CS & AI Student @ Assiut University  
+CS & AI Student @ Assiut National University  
 Ex-AI Engineer Intern @ e& Egypt  
 
 Focused on building production-oriented AI applications, LLM-powered tools, RAG workflows, and practical ML systems.
